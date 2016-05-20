@@ -14,6 +14,25 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+  <build>
+    <plugins>
+      <!-- BrowserStack Automate -->
+      <plugin>
+        <groupId>com.browserstack</groupId>
+        <artifactId>automate-maven-plugin</artifactId>
+        <version>0.1-SNAPSHOT</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>test-compile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- /BrowserStack Automate -->
+    </plugins>
+  </build>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -35,5 +54,29 @@
       <artifactId>browserstack-local-java</artifactId>
       <version>0.1.0</version>
     </dependency>
+
+    <!-- BrowserStack Automate -->
+    <dependency>
+      <groupId>com.browserstack</groupId>
+      <artifactId>automate-maven-plugin</artifactId>
+      <version>0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjrt</artifactId>
+      <version>1.7.4</version>
+    </dependency>
+    <!-- /BrowserStack Automate -->
   </dependencies>
+
+  <pluginRepositories>
+    <!-- BrowserStack Automate -->
+    <pluginRepository>
+      <id>sonatype-nexus-snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </pluginRepository>
+    <!-- /BrowserStack Automate -->
+  </pluginRepositories>
+
 </project>
+
